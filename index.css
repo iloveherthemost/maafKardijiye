@@ -1,0 +1,433 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: rgb(255, 212, 219);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html:has(.page1-body) {
+  overflow-y: auto;
+  height: auto;
+}
+
+.page1-body {
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
+  padding: 30px 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#rainCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 420px;
+  height: 600px;
+  margin: 0;
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  box-sizing: border-box;
+  background-color: rgb(255, 39, 147);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 0 0 10px 0;
+}
+
+.sorry-title {
+  width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', ;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #fff700;
+  text-shadow:
+    0 0 12px rgba(255, 200, 0, 0.7),
+    2px 2px 0px #cc0060;
+  padding: 18px 10px 10px;
+  letter-spacing: 3px;
+  animation: sorryPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes sorryPulse {
+  from { transform: scale(1);    text-shadow: 0 0 12px rgba(255,200,0,0.7), 2px 2px 0px #cc0060; }
+  to   { transform: scale(1.06); text-shadow: 0 0 28px rgba(255,240,0,1),   2px 2px 0px #990040; }
+}
+
+.bouquet-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouquet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bouquetFloat 3s ease-in-out infinite;
+}
+
+@keyframes bouquetFloat {
+  0%,100% { transform: translateY(0px) rotate(-2deg); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+
+.bouquet-svg {
+  width: 220px;
+  height: 240px;
+  filter: drop-shadow(0 8px 18px rgba(180, 0, 80, 0.35));
+}
+
+.flower { transform-box: fill-box; transform-origin: center; }
+
+.f1 { animation: flowerBloom 2.4s ease-in-out infinite alternate; }
+.f2 { animation: flowerBloom 2.0s ease-in-out 0.3s infinite alternate; }
+.f3 { animation: flowerBloom 2.2s ease-in-out 0.6s infinite alternate; }
+.f4 { animation: flowerBloom 2.6s ease-in-out 0.1s infinite alternate; }
+.f5 { animation: flowerBloom 2.8s ease-in-out 0.9s infinite alternate; }
+
+@keyframes flowerBloom {
+  from { transform: scale(1);    filter: brightness(1); }
+  to   { transform: scale(1.12); filter: brightness(1.15) drop-shadow(0 0 4px rgba(255,200,0,0.5)); }
+}
+
+.footer {
+  box-sizing: border-box;
+  margin: 0;
+  height: 45px;
+  width: 420px;
+  background-color: white;
+  border-top: none;
+  border-radius: 0 0 7px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.fin {
+  border: 1px solid red;
+  border-radius: 6px;
+  height: 30px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+}
+
+.sorry-btn {
+  color: red;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  transition: transform 0.2s, letter-spacing 0.2s;
+  animation: sorryBtnPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes sorryBtnPulse {
+  from { letter-spacing: 2px; }
+  to   { letter-spacing: 5px; color: #cc0000; }
+}
+
+.sorry-btn:hover {
+  transform: scale(1.15);
+  color: #ff0055;
+}
+
+.page1-body {
+  overflow-y: auto;
+  padding: 30px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 30px;
+}
+
+.letter {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  padding: 0 0 20px;
+  box-shadow:
+    0 4px 24px rgba(255, 39, 147, 0.22),
+    0 1px 4px rgba(180, 0, 80, 0.12);
+  overflow: hidden;
+  position: relative;
+  animation: letterAppear 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes letterAppear {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.hearts-border {
+  width: 100%;
+  background: linear-gradient(135deg, #ff80c0, #ffb3d9, #ff80c0);
+  padding: 10px 8px;
+  font-size: 1.15rem;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  word-break: break-all;
+  border-bottom: 2px dashed #ff4fa3;
+}
+
+.bottom-hearts {
+  border-bottom: none;
+  border-top: 2px dashed #ff4fa3;
+}
+
+.letter-content {
+  padding: 28px 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dear-line {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #cc0060;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.letter-content p {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: #2e2e2e;
+  max-width: 72ch;
+}
+
+.sign-off {
+  margin-top: 12px;
+  font-style: italic;
+  color: #555;
+}
+
+.signature {
+  font-family: 'Dancing Script', bold;
+  font-size: 1.4rem;
+  color: #cc0060;
+  display: block;
+  margin-top: 6px;
+}
+.next-link{
+    width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', ;
+  font-weight: 700;
+  color: #fff700;
+  text-shadow:
+    0 0 12px rgba(255, 200, 0, 0.7),
+    2px 2px 0px #cc0060;
+  padding: 18px 10px 10px;
+  letter-spacing: 3px;
+  animation: sorryPulse 2s ease-in-out infinite alternate;
+  }
+
+@media (max-width: 480px) {
+
+  body, html {
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100vw;
+    height: calc(100vh - 52px);
+    border-radius: 0;
+    padding: 0 0 8px;
+  }
+
+  .sorry-title {
+    font-size: clamp(1.6rem, 8vw, 2.6rem);
+    padding: 14px 8px 8px;
+    letter-spacing: clamp(1px, 1.5vw, 3px);
+  }
+
+  .bouquet-svg {
+    width: clamp(160px, 55vw, 220px);
+    height: clamp(175px, 60vw, 240px);
+  }
+
+  .footer {
+    width: 100%;
+    border-radius: 0;
+    height: 52px;
+  }
+
+  .fin {
+    height: 36px;
+    padding: 0 24px;
+  }
+
+  .sorry-btn {
+    font-size: clamp(1rem, 5vw, 1.2rem);
+  }
+  .next-link{
+    width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', ;
+  font-weight: 700;
+  color: #fff700;
+  text-shadow:
+    0 0 12px rgba(255, 200, 0, 0.7),
+    2px 2px 0px #cc0060;
+  padding: 18px 10px 10px;
+  letter-spacing: 3px;
+  animation: sorryPulse 2s ease-in-out infinite alternate;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .page1-body {
+    padding: 16px 10px 30px;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+
+  .letter-wrap {
+    padding: 6px 0 20px;
+  }
+
+  .letter {
+    border-radius: 8px;
+  }
+
+  .hearts-border {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 8px 6px;
+  }
+
+  .letter-content {
+    padding: 20px 18px 16px;
+    gap: 14px;
+  }
+
+  .dear-line {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .letter-content p {
+    font-size: clamp(0.875rem, 3.8vw, 0.97rem);
+    line-height: 1.7;
+    max-width: 100%;
+  }
+
+  .signature {
+    font-size: clamp(1.1rem, 5.1vw, 1.4rem);
+  }
+
+  .next-link{
+    width: 100%;
+  text-align: center;
+  font-family: 'Dancing Script', ;
+  font-weight: 700;
+  color: #fff700;
+  text-shadow:
+    0 0 12px rgba(255, 200, 0, 0.7),
+    2px 2px 0px #cc0060;
+  padding: 18px 10px 10px;
+  letter-spacing: 3px;
+  animation: sorryPulse 2s ease-in-out infinite alternate;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .sorry-title {
+    font-size: 1.45rem;
+    letter-spacing: 1px;
+  }
+
+  .bouquet-svg {
+    width: 145px;
+    height: 160px;
+  }
+
+  .dear-line {
+    font-size: 1.3rem;
+  }
+
+  .letter-content p {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+  body, html {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .container {
+    height: auto;
+    min-height: 320px;
+    padding-bottom: 16px;
+  }
+
+  .bouquet-svg {
+    width: 130px;
+    height: 145px;
+  }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+  }
+}
+
+@media (hover: none) {
+  .sorry-btn:active {
+    transform: scale(0.95);
+    color: #ff0055;
+  }
+}

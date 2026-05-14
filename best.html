@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Best of Luck, Wifey! 🌟</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="best.css"/>
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="star-burst" aria-hidden="true">⭐</div>
+      <h1 class="hero-title">Best of Luck,<br/><span class="wifey-name">Malkin!!</span></h1>
+      <p class="hero-sub">You've worked so hard for this. Now go show that exam who's boss. 💪</p>
+      <button class="scroll-btn" id="scrollBtn" aria-label="Continue">
+        Keep Going ↓
+      </button>
+    </div>
+  </section>
+
+  <section class="cards-section" id="cardsSection">
+    <h2 class="section-heading">A few things to remember 📝</h2>
+    <div class="cards-grid">
+
+      <div class="card" data-delay="0">
+        <div class="card-icon">🧠</div>
+        <h3>You Are Smart</h3>
+        <p>You have prepared well. Every page you read, every note you made - it's all inside that brilliant head of yours.</p>
+      </div>
+
+      <div class="card" data-delay="150">
+        <div class="card-icon">💪</div>
+        <h3>You Are Strongest</h3>
+        <p>You've handled hard things before and come out stronger every time. This exam is just another step.</p>
+      </div>
+
+      <div class="card" data-delay="300">
+        <div class="card-icon">⏰</div>
+        <h3>Take Your Time</h3>
+        <p>Read every question carefully. Breathe. You don't have to rush. Your best is more than enough.</p>
+      </div>
+
+      <div class="card" data-delay="450">
+        <div class="card-icon">✨</div>
+        <h3>You've Got This</h3>
+        <p>I believe in you more than you know. Go in there and make yourself proud - I'll be right here cheering for you. 🎉</p>
+      </div>
+    </div><br><br>
+    <div class='love'>I LOVE YOU JAANUUUUU<3</div>
+    <hr>
+  </section>
+
+  <section class="charm-section" id="charmSection">
+    <h2 class="section-heading">Your Lucky Charm 🍀</h2>
+    <p class="charm-desc">Tap the charm to charge it with luck before your exam!</p>
+
+    <div class="charm-area">
+      <button class="charm-btn" id="charmBtn" aria-label="Tap for luck">
+        <span class="charm-emoji" id="charmEmoji">🍀</span>
+        <span class="charm-ring" id="charmRing"></span>
+      </button>
+      <p class="charge-label" id="chargeLabel">Luck: <strong id="chargePct">0%</strong></p>
+      <div class="charge-bar-wrap">
+        <div class="charge-bar" id="chargeBar"></div>
+      </div>
+      <p class="charge-msg" id="chargeMsg">Tap the clover to charge your luck! 🌟</p>
+    </div>
+  </section>
+
+  <section class="affirmation-section" id="affirmSection">
+    <h2 class="section-heading">Need a boost? 🌸</h2>
+    <p class="affirmation-desc">Hit the button and get a little push from me 💕</p>
+
+    <div class="affirmation-box">
+      <p class="affirmation-text" id="affirmText">Press the button below!</p>
+      <button class="affirmation-btn" id="affirmBtn">Send me love ❤️</button>
+    </div>
+  </section>
+
+  <section class="sendoff-section" id="sendoffSection">
+    <div class="sendoff-inner">
+      <div class="sendoff-emoji" aria-hidden="true">🎓</div>
+      <h2 class="sendoff-title">Go Ace It, Wifey!</h2>
+      <p class="sendoff-msg">
+        No matter what happens, I am <em>so proud</em> of you.<br/>
+        We all know the hardwork you did, <em>YOU ARE GONNA ACE IT</em><br/>
+        You put in the work. Now go get what's yours. 🌟<br/><br/>
+        — <span class="ansh-sign">Ansh ❤️</span>
+      </p>
+      <button class="confetti-btn" id="confettiBtn">🎉 Celebrate with me!</button>
+    </div>
+  </section>
+
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="best.js"></script>
+</body>
+</html>
