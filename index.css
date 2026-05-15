@@ -258,7 +258,7 @@ html:has(.page1-body) {
 .next-link {
   width: 100%;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
+  /* font-family: 'Dancing Script', cursive; */
   font-weight: 700;
   color: #fff700;
   text-shadow:
@@ -315,7 +315,7 @@ html:has(.page1-body) {
   .next-link {
     width: 100%;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script'; */
     font-weight: 700;
     color: #fff700;
     text-shadow:
@@ -376,7 +376,7 @@ html:has(.page1-body) {
   .next-link {
     width: 100%;
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Dancing Script'; */
     font-weight: 700;
     color: #fff700;
     text-shadow:
