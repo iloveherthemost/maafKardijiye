@@ -1,21 +1,29 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --pink:       #ff2d78;
-  --pink-light: #ff80b0;
-  --pink-pale:  #ffe0ef;
-  --gold:       #ffd700;
-  --purple:     #9b30ff;
-  --bg-from:    #1a0030;
-  --bg-to:      #3d0060;
-  --white:      #ffffff;
-  --text-light: #ffe8f5;
-  --card-bg:    rgba(255,255,255,0.07);
-  --radius:     16px;
-  --transition: 0.3s cubic-bezier(0.16,1,0.3,1);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+:root {
+  --pink: #ff2d78;
+  --pink-light: #ff80b0;
+  --pink-pale: #ffe0ef;
+  --gold: #ffd700;
+  --purple: #9b30ff;
+  --bg-from: #1a0030;
+  --bg-to: #3d0060;
+  --white: #ffffff;
+  --text-light: #ffe8f5;
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --radius: 16px;
+  --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -28,7 +36,8 @@ body {
 #bgCanvas {
   position: fixed;
   inset: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -62,37 +71,48 @@ section {
 }
 
 @keyframes starSpin {
-  0%   { transform: rotate(0deg) scale(1); }
-  50%  { transform: rotate(180deg) scale(1.2); }
-  100% { transform: rotate(360deg) scale(1); }
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 .hero-title {
-  font-family: 'Dancing Script', ;
+  font-family: 'Dancing Script', cursive;
   font-size: clamp(1.8rem, 5vw, 5.5rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--white);
-  text-shadow: 0 0 30px rgba(255,80,160,0.8), 0 0 60px rgba(255,215,0,0.4);
+  text-shadow: 0 0 30px rgba(255, 80, 160, 0.8), 0 0 60px rgba(255, 215, 0, 0.4);
   animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
-.love{
-  font-family: 'Dancing Script', ;
+.love {
+  /* font-family: 'Dancing Script', cursive; */
   font-size: clamp(1.8rem, 5vw, 5.5rem);
   font-weight: 700;
   line-height: 1.15;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--white);
-  text-shadow: 0 0 30px rgba(255,80,160,0.8), 0 0 60px rgba(255,215,0,0.4);
-  animation: titleGlow 3s ease-in-out infinite alternate;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 30px rgba(255, 80, 160, 0.8), 0 0 60px rgba(255, 215, 0, 0.4);
+  animation: none;
+  transform: none;
 }
 
 @keyframes titleGlow {
-  from { text-shadow: 0 0 20px rgba(255,80,160,0.7), 0 0 40px rgba(255,215,0,0.3); }
-  to   { text-shadow: 0 0 40px rgba(255,80,160,1),   0 0 80px rgba(255,215,0,0.7); }
+  from {
+    text-shadow: 0 0 20px rgba(255, 80, 160, 0.7), 0 0 40px rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 40px rgba(255, 80, 160, 1), 0 0 80px rgba(255, 215, 0, 0.7);
+  }
 }
 
 .wifey-name {
@@ -119,19 +139,25 @@ section {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(255,45,120,0.5);
+  box-shadow: 0 4px 24px rgba(255, 45, 120, 0.5);
   transition: transform var(--transition), box-shadow var(--transition);
   animation: btnBounce 2s ease-in-out infinite;
 }
 
 @keyframes btnBounce {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
-.scroll-btn:hover, .scroll-btn:active {
+.scroll-btn:hover,
+.scroll-btn:active {
   transform: scale(1.08) translateY(-3px);
-  box-shadow: 0 8px 32px rgba(255,45,120,0.7);
+  box-shadow: 0 8px 32px rgba(255, 45, 120, 0.7);
 }
 
 .section-heading {
@@ -139,12 +165,12 @@ section {
   font-size: clamp(2rem, 6vw, 3rem);
   text-align: center;
   color: var(--gold);
-  text-shadow: 0 0 16px rgba(255,215,0,0.5);
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
   margin-bottom: 10px;
 }
 
 .cards-section {
-  padding: clamp(60px,10vw,100px) 20px;
+  padding: clamp(60px, 10vw, 100px) 20px;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -152,14 +178,14 @@ section {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(200px,100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: 20px;
   margin-top: 40px;
 }
 
 .card {
   background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
   padding: 28px 20px;
   backdrop-filter: blur(10px);
@@ -177,8 +203,8 @@ section {
 
 .card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(255,45,120,0.35);
-  border-color: rgba(255,45,120,0.5);
+  box-shadow: 0 12px 40px rgba(255, 45, 120, 0.35);
+  border-color: rgba(255, 45, 120, 0.5);
 }
 
 .card-icon {
@@ -189,8 +215,12 @@ section {
 }
 
 @keyframes iconFloat {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-5px); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
 }
 
 .card h3 {
@@ -203,12 +233,30 @@ section {
 .card p {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: rgba(255,230,245,0.85);
+  color: rgba(255, 230, 245, 0.85);
   max-width: 100%;
 }
 
+.love-wrap {
+  width: 100%;
+  margin: 42px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.love-line {
+  width: min(420px, 88%);
+  border: none;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.95), transparent);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+}
+
 .charm-section {
-  padding: clamp(60px,10vw,100px) 20px;
+  padding: clamp(60px, 10vw, 100px) 20px;
   text-align: center;
 }
 
@@ -240,7 +288,9 @@ section {
   transition: transform 0.15s;
 }
 
-.charm-btn:active { transform: scale(0.92); }
+.charm-btn:active {
+  transform: scale(0.92);
+}
 
 .charm-emoji {
   font-size: 5rem;
@@ -248,26 +298,38 @@ section {
   z-index: 1;
   position: relative;
   transition: filter 0.3s;
-  filter: drop-shadow(0 0 10px rgba(0,200,80,0.5));
+  filter: drop-shadow(0 0 10px rgba(0, 200, 80, 0.5));
   animation: charmSway 4s ease-in-out infinite;
 }
 
 @keyframes charmSway {
-  0%,100% { transform: rotate(-5deg); }
-  50%      { transform: rotate(5deg); }
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
 }
 
 .charm-ring {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 3px solid rgba(0,220,100,0.3);
+  border: 3px solid rgba(0, 220, 100, 0.3);
   animation: charmRingPulse 2s ease-in-out infinite;
 }
 
 @keyframes charmRingPulse {
-  0%,100% { transform: scale(1);   opacity: 0.4; }
-  50%      { transform: scale(1.2); opacity: 0.8; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 }
 
 .charge-label {
@@ -279,19 +341,19 @@ section {
 .charge-bar-wrap {
   width: min(320px, 80vw);
   height: 16px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .charge-bar {
   height: 100%;
-  width: 0%;
+  width: 0;
   background: linear-gradient(90deg, #00e676, #ffde03, #ff2d78);
   border-radius: 50px;
-  transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
-  box-shadow: 0 0 10px rgba(0,230,118,0.6);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.6);
 }
 
 .charge-msg {
@@ -303,7 +365,7 @@ section {
 }
 
 .affirmation-section {
-  padding: clamp(60px,10vw,100px) 20px;
+  padding: clamp(60px, 10vw, 100px) 20px;
   text-align: center;
 }
 
@@ -328,7 +390,7 @@ section {
   max-width: 500px;
   min-height: 3em;
   line-height: 1.4;
-  text-shadow: 0 0 20px rgba(255,80,160,0.5);
+  text-shadow: 0 0 20px rgba(255, 80, 160, 0.5);
   transition: opacity 0.4s, transform 0.4s;
 }
 
@@ -347,19 +409,21 @@ section {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(155,48,255,0.45);
+  box-shadow: 0 4px 24px rgba(155, 48, 255, 0.45);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .affirmation-btn:hover {
   transform: scale(1.07);
-  box-shadow: 0 8px 32px rgba(155,48,255,0.65);
+  box-shadow: 0 8px 32px rgba(155, 48, 255, 0.65);
 }
 
-.affirmation-btn:active { transform: scale(0.96); }
+.affirmation-btn:active {
+  transform: scale(0.96);
+}
 
 .sendoff-section {
-  padding: clamp(80px,12vw,120px) 20px clamp(100px,15vw,150px);
+  padding: clamp(80px, 12vw, 120px) 20px clamp(100px, 15vw, 150px);
   text-align: center;
 }
 
@@ -373,12 +437,17 @@ section {
 .sendoff-emoji {
   font-size: clamp(4rem, 14vw, 6rem);
   animation: capFloat 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(255,215,0,0.7));
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7));
 }
 
 @keyframes capFloat {
-  0%,100% { transform: translateY(0) rotate(-5deg); }
-  50%      { transform: translateY(-14px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(5deg);
+  }
 }
 
 .sendoff-title {
@@ -386,7 +455,7 @@ section {
   font-size: clamp(2.4rem, 8vw, 4.5rem);
   font-weight: 700;
   color: var(--gold);
-  text-shadow: 0 0 30px rgba(255,215,0,0.6);
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
 }
 
 .sendoff-msg {
@@ -396,10 +465,14 @@ section {
   max-width: 480px;
 }
 
-.sendoff-msg em { color: var(--gold); font-style: normal; font-weight: 600; }
+.sendoff-msg em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
 
 .ansh-sign {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.4rem;
   color: var(--pink-light);
 }
@@ -415,37 +488,69 @@ section {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(255,215,0,0.5);
+  box-shadow: 0 4px 24px rgba(255, 215, 0, 0.5);
   transition: transform var(--transition), box-shadow var(--transition);
   animation: btnBounce 2.5s ease-in-out infinite;
 }
 
 .confetti-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 36px rgba(255,215,0,0.7);
+  box-shadow: 0 10px 36px rgba(255, 215, 0, 0.7);
 }
 
-.confetti-btn:active { transform: scale(0.95); }
+.confetti-btn:active {
+  transform: scale(0.95);
+}
 
 #confettiCanvas {
   position: fixed;
   inset: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 999;
   display: none;
 }
 
 @media (max-width: 480px) {
-  .cards-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .card { padding: 20px 14px; }
-  .card-icon { font-size: 2rem; }
-  .card h3 { font-size: 0.95rem; }
-  .card p { font-size: 0.8rem; }
-  .charm-btn { width: 110px; height: 110px; }
-  .charm-emoji { font-size: 4rem; }
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    padding: 20px 14px;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .card h3 {
+    font-size: 0.95rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+
+  .charm-btn {
+    width: 110px;
+    height: 110px;
+  }
+
+  .charm-emoji {
+    font-size: 4rem;
+  }
+
+  .love-wrap {
+    margin-top: 34px;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 360px) {
-  .cards-grid { grid-template-columns: 1fr; }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
