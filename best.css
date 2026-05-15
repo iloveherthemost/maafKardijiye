@@ -77,27 +77,17 @@ section {
   animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
-.love {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+.love{
+  font-family: 'Dancing Script', ;
+  font-size: clamp(1.8rem, 5vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.15;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  pointer-events: none;
-  animation: heartbeat 1.2s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-  0%   { transform: translate(-50%, -50%) scale(1);    }
-  14%  { transform: translate(-50%, -50%) scale(1.18); }
-  28%  { transform: translate(-50%, -50%) scale(1);    }
-  42%  { transform: translate(-50%, -50%) scale(1.12); }
-  70%  { transform: translate(-50%, -50%) scale(1);    }
-  100% { transform: translate(-50%, -50%) scale(1);    }
+  justify-content: center;
+  color: var(--white);
+  text-shadow: 0 0 30px rgba(255,80,160,0.8), 0 0 60px rgba(255,215,0,0.4);
+  animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes titleGlow {
@@ -144,7 +134,6 @@ section {
   box-shadow: 0 8px 32px rgba(255,45,120,0.7);
 }
 
-/* ══ SECTION HEADING ══ */
 .section-heading {
   font-family: 'Dancing Script', cursive;
   font-size: clamp(2rem, 6vw, 3rem);
@@ -154,7 +143,6 @@ section {
   margin-bottom: 10px;
 }
 
-/* ══ CARDS SECTION ══ */
 .cards-section {
   padding: clamp(60px,10vw,100px) 20px;
   max-width: 900px;
@@ -219,7 +207,6 @@ section {
   max-width: 100%;
 }
 
-/* ══ CHARM SECTION ══ */
 .charm-section {
   padding: clamp(60px,10vw,100px) 20px;
   text-align: center;
@@ -315,7 +302,6 @@ section {
   transition: color 0.3s;
 }
 
-/* ══ AFFIRMATION SECTION ══ */
 .affirmation-section {
   padding: clamp(60px,10vw,100px) 20px;
   text-align: center;
@@ -372,7 +358,6 @@ section {
 
 .affirmation-btn:active { transform: scale(0.96); }
 
-/* ══ SEND-OFF SECTION ══ */
 .sendoff-section {
   padding: clamp(80px,12vw,120px) 20px clamp(100px,15vw,150px);
   text-align: center;
@@ -442,7 +427,6 @@ section {
 
 .confetti-btn:active { transform: scale(0.95); }
 
-/* ── Confetti canvas ── */
 #confettiCanvas {
   position: fixed;
   inset: 0;
@@ -452,7 +436,6 @@ section {
   display: none;
 }
 
-/* ══ MOBILE ══ */
 @media (max-width: 480px) {
   .cards-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
   .card { padding: 20px 14px; }
