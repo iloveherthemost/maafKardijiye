@@ -126,7 +126,6 @@ document.getElementById('scrollBtn').addEventListener('click', function () {
 })();
 
 
-/* ── 5. AFFIRMATION MESSAGES ── */
 (function () {
   const AFFIRMATIONS = [
     'You are smarter than you think! 🧠',
@@ -160,8 +159,6 @@ document.getElementById('scrollBtn').addEventListener('click', function () {
   });
 })();
 
-
-/* ── 6. CONFETTI BURST ── */
 (function () {
   const confettiCanvas = document.getElementById('confettiCanvas');
   const ctx = confettiCanvas.getContext('2d');
